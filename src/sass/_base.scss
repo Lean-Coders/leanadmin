@@ -1,0 +1,53 @@
+@import 'variables';
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 18px;
+  }
+}
+
+p {
+  line-height: 24px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 14px;
+  }
+}
+
+span {
+  @media screen and (max-width: $tablet) {
+    font-size: 14px;
+  }
+}
+
+.wrapper--base {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+
+  @media screen and (max-width: 1264px) {
+    margin: 0 20px;
+  }
+}
