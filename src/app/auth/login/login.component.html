@@ -1,42 +1,42 @@
 <div class="wrapper wrapper-full-page">
-  <div class="background-image-full">
-    <section class="authentication-form">
-      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-        <div class="form-bg">
-          <h2>Login</h2>
-          <mat-icon>account_circle</mat-icon>
-          <mat-form-field>
-            <input
-                type="email"
-                matInput
-                placeholder="E-Mail Adresse"
-                ngModel
-                name="email"
-                email
-                required
-                #emailInput="ngModel">
-            <mat-error *ngIf="emailInput.hasError('required')">Feld darf nicht leer sein</mat-error>
-            <mat-error *ngIf="!emailInput.hasError('required')">E-Mail ist ungültig</mat-error>
-          </mat-form-field>
+    <div class="background-image-full">
+        <section class="authentication-form">
+            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+                <div class="form-bg">
+                    <h2>Login</h2>
+                    <mat-icon>account_circle</mat-icon>
+                    <mat-form-field>
+                        <input
+                            type="email"
+                            matInput
+                            placeholder="E-Mail Adresse"
+                            ngModel
+                            name="email"
+                            email
+                            required
+                            #emailInput="ngModel">
+                        <mat-error *ngIf="emailInput.hasError('required')">Feld darf nicht leer sein</mat-error>
+                        <mat-error *ngIf="!emailInput.hasError('required')">E-Mail ist ungültig</mat-error>
+                    </mat-form-field>
 
-          <mat-form-field hintLabel="Mind. 8 Zeichen">
-            <input
-                type="password"
-                matInput
-                placeholder="Passwort"
-                ngModel
-                name="password"
-                required
-                minlength="6"
-                #pwInput="ngModel">
-            <mat-hint align="end">{{pwInput.value?.length}} / 8</mat-hint>
-            <mat-error>Muss mind. 8 Zeichen lang sein</mat-error>
-          </mat-form-field>
+                    <mat-form-field hintLabel="Mind. 8 Zeichen">
+                        <input
+                            type="password"
+                            matInput
+                            placeholder="Passwort"
+                            ngModel
+                            name="password"
+                            required
+                            minlength="6"
+                            #pwInput="ngModel">
+                        <mat-hint align="end">{{pwInput.value?.length}} / 8</mat-hint>
+                        <mat-error>Muss mind. 8 Zeichen lang sein</mat-error>
+                    </mat-form-field>
 
-          <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Login</button>
-            <a routerLink="/forgot">Passwort vergessen?</a>
-        </div>
-      </form>
-    </section>
-  </div>
+                    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Login</button>
+                    <a routerLink="/forgot">Passwort vergessen?</a>
+                </div>
+            </form>
+        </section>
+    </div>
 </div>
