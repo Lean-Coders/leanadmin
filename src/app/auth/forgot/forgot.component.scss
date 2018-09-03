@@ -1,0 +1,53 @@
+@import '../../../styles';
+
+form {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.background-image-full {
+  background-image: url("../../../assets/img/login2.jpg");
+  background-size: cover;
+  background-position: top center;
+  height: auto;
+  min-height: 100vh;
+}
+
+.form-bg {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+h2 {
+  margin: 10px auto;
+}
+
+mat-icon {
+  margin: 0 auto 40px auto;
+  width: 55px;
+  font-size: 50px;
+}
+
+mat-form-field {
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+button {
+  margin-top: 35px;
+}
+
+a {
+  color: $lc-blue;
+  margin: 10px auto;
+}
+
+
+
+

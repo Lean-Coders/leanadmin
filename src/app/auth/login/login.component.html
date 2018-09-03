@@ -4,7 +4,7 @@
       <form #f="ngForm" (ngSubmit)="onSubmit(f)">
         <div class="form-bg">
           <h2>Login</h2>
-          <mat-icon>vpn_key</mat-icon>
+          <mat-icon>account_circle</mat-icon>
           <mat-form-field>
             <input
                     type="email"
@@ -34,6 +34,7 @@
           </mat-form-field>
 
           <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Login</button>
+            <a routerLink="/forgot">Passwort vergessen?</a>
         </div>
       </form>
     </section>

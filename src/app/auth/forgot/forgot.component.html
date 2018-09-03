@@ -1,3 +1,28 @@
-<p>
-  forgot works!
-</p>
+<div class="wrapper wrapper-full-page">
+  <div class="background-image-full">
+    <section class="signup-form">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="form-bg">
+          <h2>Passwort vergessen</h2>
+          <mat-icon>vpn_key</mat-icon>
+          <mat-form-field>
+            <input
+                    type="email"
+                    matInput
+                    placeholder="E-Mail Adresse"
+                    ngModel
+                    name="email"
+                    email
+                    required
+                    #emailInput="ngModel">
+            <mat-error *ngIf="emailInput.hasError('required')">Feld darf nicht leer sein</mat-error>
+            <mat-error *ngIf="!emailInput.hasError('required')">E-Mail ist ungültig</mat-error>
+          </mat-form-field>
+
+          <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Passwort zurücksetzen</button>
+          <a routerLink="/">Zurück zum Login</a>
+        </div>
+      </form>
+    </section>
+  </div>
+</div>
