@@ -1,8 +1,24 @@
 @import 'variables';
 
+html, body {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  top: 0;
+}
+
+.wrapper.wrapper-full-page {
+  height: auto;
+  min-height: 100vh;
+}
+
 body {
   overflow-x: hidden;
   overflow-y: scroll;
+  margin: 0;
 }
 
 *, ::before, ::after {
@@ -39,15 +55,5 @@ p {
 span {
   @media screen and (max-width: $tablet) {
     font-size: 14px;
-  }
-}
-
-.wrapper--base {
-  max-width: 1200px;
-  margin: 0 auto;
-  position: relative;
-
-  @media screen and (max-width: 1264px) {
-    margin: 0 20px;
   }
 }
