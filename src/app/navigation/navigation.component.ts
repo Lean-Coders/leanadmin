@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -9,7 +9,7 @@ import {AuthService} from "../auth/login/auth.service";
   templateUrl: './navigation.component.html',
   styleUrls: ['./navigation.component.scss']
 })
-export class NavigationComponent {
+export class NavigationComponent implements OnInit{
 
   @Output() closeSidenav = new EventEmitter<void>();
 
@@ -17,9 +17,15 @@ export class NavigationComponent {
     .pipe(
       map(result => result.matches)
     );
-    
-  constructor(private breakpointObserver: BreakpointObserver,
+
+    isLoggedIn$: Observable<boolean>;
+
+    constructor(private breakpointObserver: BreakpointObserver,
               private authService: AuthService) {}
+
+    ngOnInit() {
+        this.isLoggedIn$ = this.authService.isLoggedIn;
+    }
 
     onClose() {
         this.closeSidenav.emit();
