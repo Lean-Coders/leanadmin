@@ -10,10 +10,11 @@ import { MaterialModule } from "./material.module";
 import { LoginComponent } from './auth/login/login.component';
 import { ForgotComponent } from './auth/forgot/forgot.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { ReservationComponent } from "./dashboard/reservation/reservation.component";
+import { AdminboardComponent } from './adminboard/adminboard.component';
+import { ReservationComponent } from "./adminboard/reservation/reservation.component";
 import { AuthService } from "./auth/login/auth.service";
 import { AuthGuard } from "./auth/login/auth.guard";
+import { DashboardComponent } from './adminboard/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +22,9 @@ import { AuthGuard } from "./auth/login/auth.guard";
     NavigationComponent,
     LoginComponent,
     ForgotComponent,
-    DashboardComponent,
-    ReservationComponent
+    AdminboardComponent,
+    ReservationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
