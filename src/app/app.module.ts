@@ -9,8 +9,11 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MaterialModule } from "./material.module";
 import { LoginComponent } from './auth/login/login.component';
 import { ForgotComponent } from './auth/forgot/forgot.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ReservationComponent } from "./dashboard/reservation/reservation.component";
+import { AuthService } from "./auth/login/auth.service";
+import { AuthGuard } from "./auth/login/auth.guard";
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavigationComponent,
     LoginComponent,
     ForgotComponent,
-    DashboardComponent
+    DashboardComponent,
+    ReservationComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +31,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     BrowserAnimationsModule,
     LayoutModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,17 +8,17 @@
             [opened]="!(isHandset$ | async)">
         <mat-toolbar color="primary">Logo</mat-toolbar>
         <mat-nav-list>
-            <a mat-list-item routerLink="/dashboard" (click)="sidenav.close()">
+            <a mat-list-item routerLink="/dashboard" (click)="onClose()">
                 <mat-icon>dashboard</mat-icon>
                 <span class="nav-caption">Dashboard</span>
             </a>
-            <a mat-list-item routerLink="/reservation" (click)="sidenav.close()">
+            <a mat-list-item routerLink="/reservation" (click)="onClose()">
                 <mat-icon>notes</mat-icon>
                 <span class="nav-caption">Reservierungen</span>
             </a>
-            <a mat-list-item routerLink="/" (click)="sidenav.close()">
+            <a mat-list-item routerLink="/" (click)="onClose()">
                 <mat-icon>eject</mat-icon>
-                <span class="nav-caption">Logout</span>
+                <span class="nav-caption" (click)="onLogout()">Logout</span>
             </a>
         </mat-nav-list>
     </mat-sidenav>

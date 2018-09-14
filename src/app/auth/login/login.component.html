@@ -1,7 +1,7 @@
 <div class="wrapper wrapper-full-page">
     <div class="background-image-full">
         <section class="authentication-form">
-            <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-bg">
                     <h2>Login</h2>
                     <mat-icon>account_circle</mat-icon>
@@ -10,30 +10,26 @@
                             type="email"
                             matInput
                             placeholder="E-Mail Adresse"
-                            ngModel
                             name="email"
                             email
-                            required
-                            #emailInput="ngModel">
-                        <mat-error *ngIf="emailInput.hasError('required')">Feld darf nicht leer sein</mat-error>
-                        <mat-error *ngIf="!emailInput.hasError('required')">E-Mail ist ungültig</mat-error>
+                            formControlName="email"
+                            required>
+                        <mat-error *ngIf="isFieldInvalid('email')">E-Mail ist ungültig</mat-error>
                     </mat-form-field>
 
-                    <mat-form-field hintLabel="Mind. 8 Zeichen">
+                    <mat-form-field hintLabel="Mind. 6 Zeichen">
                         <input
                             type="password"
                             matInput
                             placeholder="Passwort"
-                            ngModel
                             name="password"
+                            formControlName="password"
                             required
-                            minlength="6"
-                            #pwInput="ngModel">
-                        <mat-hint align="end">{{pwInput.value?.length}} / 8</mat-hint>
-                        <mat-error>Muss mind. 8 Zeichen lang sein</mat-error>
+                            minlength="6">
+                        <mat-error *ngIf="isFieldInvalid('password')">Passwort ist ungültig</mat-error>
                     </mat-form-field>
 
-                    <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Login</button>
+                    <button type="submit" mat-raised-button color="primary" [disabled]="loginForm.invalid">Login</button>
                     <a routerLink="/forgot">Passwort vergessen?</a>
                 </div>
             </form>
