@@ -15,6 +15,8 @@ import { ReservationComponent } from "./adminboard/reservation/reservation.compo
 import { AuthService } from "./auth/login/auth.service";
 import { AuthGuard } from "./auth/login/auth.guard";
 import { DashboardComponent } from './adminboard/dashboard/dashboard.component';
+import {CommonModule} from "@angular/common";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { DashboardComponent } from './adminboard/dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
+    CommonModule,
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
