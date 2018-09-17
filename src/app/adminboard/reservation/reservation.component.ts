@@ -28,10 +28,7 @@ export class ReservationComponent implements OnInit {
 
   ngOnInit() {
       this.dataSource = new TableDataSource<any>(this.personList, Person, this.personValidator);
-
       this.dataSource.datasourceSubject.subscribe(personList => this.personListChange.emit(personList));
   }
-
-
 
 }

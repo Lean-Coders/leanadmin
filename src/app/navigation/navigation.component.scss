@@ -11,10 +11,15 @@
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
+  z-index: 999;
 }
 
 .nav-caption {
   display: inline-block;
   padding: 10px;
   font-size: 16px;
+}
+
+.content {
+  height: 100%;
 }

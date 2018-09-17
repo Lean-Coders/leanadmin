@@ -1,9 +1,15 @@
-// For table's disabled input.
+section {
+  padding: 20px;
+}
+
+table {
+  width: 100%;
+}
+
 .mat-input-element:disabled {
   color: rgba(0, 0, 0, 1);
 }
 
-// For table's disabled mat-select.
 :host /deep/ .mat-select-disabled .mat-select-value-text {
   color: rgba(0, 0, 0, 1) !important;
 }

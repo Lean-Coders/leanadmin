@@ -26,7 +26,7 @@ const routes: Routes = [
         component: ForgotComponent
     },
 
-    { path: '**', redirectTo: '' }
+    { path: '**', redirectTo: 'login' }
 ];
 
 @NgModule({
