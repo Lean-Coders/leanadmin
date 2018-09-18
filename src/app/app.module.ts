@@ -19,6 +19,7 @@ import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { AdminboardLayoutComponent } from "./layouts/adminboard-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
+import { ChartsModule } from "ng2-charts";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { LoginLayoutComponent } from "./layouts/login-layout.component";
     LayoutModule,
     MaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartsModule
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

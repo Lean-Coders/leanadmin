@@ -1,3 +1,50 @@
 <section>
   <h3>Dashboard</h3>
+  <mat-card class="dashboard-card">
+    <mat-card-header>
+      <mat-card-title>Website Besuche</mat-card-title>
+    </mat-card-header>
+    <div class="line-chart">
+      <canvas
+              baseChart
+              [chartType]="'line'"
+              [datasets]="chartData"
+              [labels]="chartLabels"
+              [colors]="chartColors"
+              [options]="chartOptions"
+              [legend]="true"
+              (chartClick)="onChartClick($event)">
+      </canvas>
+    </div>
+    <mat-card-actions>
+      <button mat-icon-button color="primary" focusable="false">
+        <mat-icon>alarm</mat-icon>
+      </button>
+      <span>updated ... days ago</span>
+    </mat-card-actions>
+  </mat-card>
+
+  <mat-card class="dashboard-card" style="margin-top: 20px">
+    <mat-card-header>
+      <mat-card-title>Reservierungen</mat-card-title>
+    </mat-card-header>
+    <div class="line-chart">
+      <canvas
+              baseChart
+              [chartType]="'line'"
+              [datasets]="chartData"
+              [labels]="chartLabels"
+              [colors]="chartColors"
+              [options]="chartOptions"
+              [legend]="true"
+              (chartClick)="onChartClick($event)">
+      </canvas>
+    </div>
+    <mat-card-actions>
+      <button mat-icon-button color="primary" focusable="false">
+        <mat-icon>alarm</mat-icon>
+      </button>
+      <span>updated ... days ago</span>
+    </mat-card-actions>
+  </mat-card>
 </section>
