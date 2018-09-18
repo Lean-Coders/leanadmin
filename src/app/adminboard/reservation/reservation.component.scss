@@ -1,15 +1,39 @@
-table {
-  width: 100%;
+.table-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
 }
 
-.mat-input-element:disabled {
-  color: rgba(0, 0, 0, 1);
+.mat-table {
+  overflow: auto;
 }
 
-:host /deep/ .mat-select-disabled .mat-select-value-text {
-  color: rgba(0, 0, 0, 1) !important;
+.mobile-label {
+  display: none;
 }
 
-:host /deep/ .mat-form-field-disabled .mat-form-field-underline {
-  background-image: none !important;
+@media(max-width: 870px) {
+  .mobile-label {
+    width: 80px;
+    display: inline-block;
+    font-weight: bold;
+
+    &.action-label {
+      width: 70px;
+    }
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 20px 20px 0 20px;
+  }
+
+  .mat-cell:first-child {
+    padding: 0;
+  }
 }

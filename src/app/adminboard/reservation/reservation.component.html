@@ -5,48 +5,66 @@
             <input matInput type="text" placeholder="Search" (keyup)="doFilter($event.target.value)">
         </mat-form-field>
     </div>
-        <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8" >
-            <ng-container matColumnDef="date">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
-                <td mat-cell *matCellDef="let element" data-label="date"> {{element.date}} </td>
-            </ng-container>
-            <ng-container matColumnDef="name">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-                <td mat-cell *matCellDef="let element" data-label="name"> {{element.name}} </td>
-            </ng-container>
-            <ng-container matColumnDef="email">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
-                <td mat-cell *matCellDef="let element" data-label="email"> {{element.email}} </td>
-            </ng-container>
-            <ng-container matColumnDef="person">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Personenzahl</th>
-                <td mat-cell *matCellDef="let element" data-label="person"> {{element.person}} </td>
-            </ng-container>
-            <ng-container matColumnDef="type">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Reservierungsart</th>
-                <td mat-cell *matCellDef="let element" data-label="type"> {{element.type}} </td>
-            </ng-container>
-            <ng-container matColumnDef="state">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
-                <td mat-cell *matCellDef="let element" data-label="state"> {{element.state}} </td>
-            </ng-container>
 
-            <ng-container matColumnDef="actionsColumn">
-                <th mat-header-cell *matHeaderCellDef>
-                    <button mat-icon-button color="primary"><i class="fa fa-plus mat-icon"></i></button>
-                </th>
-                <td mat-cell *matCellDef="let row" data-label="actions">
-                    <button mat-icon-button color="accent" focusable="false">
-                        <i class="fa fa-pencil mat-icon"></i>
-                    </button>
-                    <button mat-icon-button color="warn" focusable="false">
-                        <i class="fa fa-times mat-icon"></i>
-                    </button>
-                </td>
-            </ng-container>
+<div class="table-container mat-elevation-z8">
+    <mat-table #table [dataSource]="dataSource">
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef>Date</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Date</span> {{element.date}}
+            </mat-cell>
+        </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    <mat-paginator #paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
+        <ng-container matColumnDef="name">
+            <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Name</span> {{element.name}}
+            </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Email:</span> {{element.email}}
+            </mat-cell>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="person">
+            <mat-header-cell *matHeaderCellDef> Person </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Person:</span> {{element.person}}
+            </mat-cell>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="type">
+            <mat-header-cell *matHeaderCellDef> Type </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Type:</span> {{element.type}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="state">
+            <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">State:</span> {{element.state}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="actionsColumn">
+            <mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary"><i class="fa fa-plus mat-icon"></i></button> </mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label action-label"><button mat-icon-button color="primary"><i class="fa fa-plus mat-icon"></i></button></span>
+                <button mat-icon-button color="accent" focusable="false">
+                    <i class="fa fa-pencil mat-icon"></i>
+                </button>
+                <button mat-icon-button color="warn" focusable="false">
+                    <i class="fa fa-times mat-icon"></i>
+                </button>
+            </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+</div>
 </section>
