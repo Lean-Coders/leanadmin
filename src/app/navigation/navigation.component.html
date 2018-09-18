@@ -1,4 +1,4 @@
-<mat-sidenav-container class="sidenav-container" *ngIf="isLoggedIn$ | async">
+<mat-sidenav-container class="sidenav-container">
     <mat-sidenav
             #drawer
             class="sidenav"
@@ -18,7 +18,7 @@
             </a>
             <a mat-list-item routerLink="/" (click)="onClose()">
                 <mat-icon>eject</mat-icon>
-                <span class="nav-caption" (click)="onLogout()" *ngIf="isLoggedIn$ | async">Logout</span>
+                <span class="nav-caption" (click)="onLogout()">Logout</span>
             </a>
         </mat-nav-list>
     </mat-sidenav>

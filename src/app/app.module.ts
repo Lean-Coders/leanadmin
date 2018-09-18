@@ -15,12 +15,16 @@ import { ReservationComponent } from "./adminboard/reservation/reservation.compo
 import { AuthService } from "./auth/login/auth.service";
 import { AuthGuard } from "./auth/login/auth.guard";
 import { DashboardComponent } from './adminboard/dashboard/dashboard.component';
-import {CommonModule} from "@angular/common";
-import {HttpClientModule} from "@angular/common/http";
+import { CommonModule } from "@angular/common";
+import { HttpClientModule } from "@angular/common/http";
+import { AdminboardLayoutComponent } from "./layouts/adminboard-layout.component";
+import { LoginLayoutComponent } from "./layouts/login-layout.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    AdminboardLayoutComponent,
+    LoginLayoutComponent,
     NavigationComponent,
     LoginComponent,
     ForgotComponent,
