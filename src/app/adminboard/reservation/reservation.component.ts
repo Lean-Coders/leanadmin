@@ -1,34 +1,45 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
-import {TableDataSource, ValidatorService} from "angular4-material-table";
-import {MatSort, MatTableDataSource} from "@angular/material";
-import {PersonValidatorService} from "./person-validator.service";
-import {Person} from "./person";
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
+
+export interface ReservationDetails {
+    date: string;
+    name: string;
+    email: string;
+    person: string;
+    type: string;
+    state: string;
+}
+
+const ELEMENT_DATA: ReservationDetails[] = [
+    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '4', type: 'Normal', state: 'abgeschlossen'},
+    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '6', type: 'Normal', state: 'storniert'},
+    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '8', type: 'Geburtstag', state: 'abgeschlossen'},
+    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '2', type: 'Normal', state: 'storniert'},
+    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '10', type: 'Geburtstag', state: 'abgeschlossen'},
+    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '3', type: 'Normal', state: 'storniert'}
+    ];
 
 @Component({
   selector: 'app-reservation',
-  providers: [
-      {provide: ValidatorService, useClass: PersonValidatorService }
-  ],
   templateUrl: './reservation.component.html',
   styleUrls: ['./reservation.component.scss']
 })
-export class ReservationComponent implements OnInit {
+export class ReservationComponent implements OnInit{
+
+    displayedColumns: string[] = ['date', 'name', 'email', 'person', 'type', 'state', 'actionsColumn'];
+    dataSource = new MatTableDataSource<ReservationDetails>(ELEMENT_DATA);
+
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+    @ViewChild(MatSort) sort: MatSort;
 
 
-  constructor(private personValidator: ValidatorService) { }
-  displayedColumns = ['date', 'name', 'age', 'actionsColumn'];
+    ngOnInit() {
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+    }
 
-    @Input() personList = [
-        { date: 25.08, name: 'Mark', age: 15 },
-        { date: 25.08, name: 'Brad', age: 50 },
-    ] ;
-    @Output() personListChange = new EventEmitter<Person[]>();
-
-    dataSource: TableDataSource<Person>;
-
-  ngOnInit() {
-      this.dataSource = new TableDataSource<any>(this.personList, Person, this.personValidator);
-      this.dataSource.datasourceSubject.subscribe(personList => this.personListChange.emit(personList));
-  }
+    doFilter(filterValue: string) {
+        this.dataSource.filter = filterValue.trim().toLowerCase();
+    }
 
 }

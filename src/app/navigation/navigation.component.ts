@@ -13,7 +13,7 @@ export class NavigationComponent implements OnInit{
 
   @Output() closeSidenav = new EventEmitter<void>();
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
+  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.HandsetPortrait)
     .pipe(
       map(result => result.matches)
     );
