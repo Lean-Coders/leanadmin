@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {
     MatButtonModule,
-    MatCardModule, MatCheckboxModule, MatFormFieldModule,
+    MatCardModule, MatCheckboxModule, MatDatepickerModule, MatFormFieldModule,
     MatIconModule, MatInputModule,
     MatListModule, MatNativeDateModule, MatPaginatorModule,
     MatSidenavModule, MatSortModule, MatTableModule,
@@ -22,7 +22,8 @@ import {
       MatCheckboxModule,
       MatTableModule,
       MatSortModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      MatDatepickerModule
   ],
   exports: [
       MatToolbarModule,
@@ -37,7 +38,8 @@ import {
       MatCheckboxModule,
       MatTableModule,
       MatSortModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      MatDatepickerModule
   ]
 })
 

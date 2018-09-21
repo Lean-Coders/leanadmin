@@ -6,7 +6,7 @@
             [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
             [mode]="(isHandset$ | async) ? 'over' : 'side'"
             [opened]="!(isHandset$ | async)">
-        <mat-toolbar color="primary">Logo</mat-toolbar>
+        <mat-toolbar class="toolbar-sidenav">Logo</mat-toolbar>
         <mat-nav-list>
             <a mat-list-item routerLink="/dashboard" (click)="onClose()">
                 <mat-icon>dashboard</mat-icon>
@@ -23,14 +23,14 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
+        <mat-toolbar class="toolbar-topnav">
             <button
                     type="button"
                     aria-label="Toggle sidenav"
                     mat-icon-button
                     (click)="drawer.toggle()"
                     *ngIf="isHandset$ | async">
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                <mat-icon style="color: white;">more_vert</mat-icon>
             </button>
         </mat-toolbar>
         <div class="content">

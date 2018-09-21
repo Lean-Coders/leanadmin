@@ -20,3 +20,17 @@
   font-size: 16px;
 }
 
+.fontAwesome {
+  font-family: 'Helvetica', FontAwesome, sans-serif;
+}
+
+mat-toolbar {
+  &.toolbar-topnav {
+    background: $lc-gradient-darkblue;
+
+  }
+  &.toolbar-sidenav {
+    background: $lc-darkblue;
+    color: $white;
+  }
+}

@@ -22,12 +22,12 @@ export class DashboardComponent implements OnInit {
 
     chartColors = [
         {
-            backgroundColor: 'rgba(103, 58, 183, .1)',
-            borderColor: 'rgb(103, 58, 183)',
-            pointBackgroundColor: 'rgb(103, 58, 183)',
+            backgroundColor: 'rgba(19, 84, 122, .1)',
+            borderColor: 'rgb(19, 84, 122)',
+            pointBackgroundColor: 'rgb(19, 84, 122)',
             pointBorderColor: '#fff',
             pointHoverBackgroundColor: '#fff',
-            pointHoverBorderColor: 'rgba(103, 58, 183, .8)'
+            pointHoverBorderColor: 'rgba(19, 84, 122, .8)'
         },
         // ...colors for additional data sets
     ];

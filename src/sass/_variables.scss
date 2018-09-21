@@ -2,8 +2,11 @@
 $white: #fff;
 $black: #000;
 $lc-blue: #486a87;
+$lc-darkblue: #09203f;
 $lc-lightgrey: #c2c4ca;
-$lc-dardgrey: #404040;
+$lc-darkgrey: #404040;
+$lc-gradient-blue: linear-gradient(to right, rgba(19,84,122,1) 0%,rgba(128,208,199,1) 100%);
+$lc-gradient-darkblue: linear-gradient(to right, rgba(9,32,63,1) 0%,rgba(83,120,149,1) 100%);
 
 
 // Device Breakpoints
