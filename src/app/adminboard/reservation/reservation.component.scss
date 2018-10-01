@@ -12,6 +12,27 @@
   display: none;
 }
 
+.mat-icon {
+  height: auto;
+}
+
+.mat-header-cell {
+  padding: 10px;
+}
+
+.mat-header-cell:first-child {
+  padding-left: 24px;
+}
+
+.mat-cell {
+  padding: 10px;
+}
+
+.mat-cell:first-child {
+  padding-left: 24px;
+}
+
+
 @media(max-width: 870px) {
   .mobile-label {
     width: 80px;
@@ -31,6 +52,10 @@
     flex-direction: column;
     align-items: start;
     padding: 20px 20px 0 20px;
+  }
+
+  .mat-cell {
+    padding: 0;
   }
 
   .mat-cell:first-child {

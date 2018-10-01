@@ -1,0 +1,35 @@
+.crud-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: $main-box-shadow;
+
+  mat-form-field {
+    width: 95%;
+    margin: 15px auto;
+
+    @media screen and (max-width: $tablet) {
+      width: 90%;
+      margin: 10px auto;
+    }
+
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  mat-icon {
+    color: rgba(0, 0, 0, 0.54);
+  }
+
+  button {
+    width: 35%;
+    margin: 10px auto;
+
+    @media screen and (max-width: $tablet) {
+      width: 90%;
+    }
+  }
+}

@@ -20,6 +20,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { AdminboardLayoutComponent } from "./layouts/adminboard-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
 import { ChartsModule } from "ng2-charts";
+import { TableEditComponent } from './adminboard/reservation/table-edit/table-edit.component';
+import { TableAddComponent } from './adminboard/reservation/table-add/table-add.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { ChartsModule } from "ng2-charts";
     ForgotComponent,
     AdminboardComponent,
     ReservationComponent,
-    DashboardComponent
+    DashboardComponent,
+    TableEditComponent,
+    TableAddComponent
   ],
   imports: [
     CommonModule,
@@ -44,7 +48,7 @@ import { ChartsModule } from "ng2-charts";
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    ChartsModule
+    ChartsModule,
   ],
   providers: [AuthService, AuthGuard],
   bootstrap: [AppComponent]

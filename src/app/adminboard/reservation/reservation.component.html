@@ -8,40 +8,52 @@
 
 <div class="table-container mat-elevation-z8">
     <mat-table #table [dataSource]="dataSource">
-        <ng-container matColumnDef="date">
-            <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
-            <mat-cell *matCellDef="let element">
-                <span class="mobile-label">Datum:</span> {{element.date}}
-            </mat-cell>
-        </ng-container>
-
         <ng-container matColumnDef="name">
             <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <span class="mobile-label">Name:</span> {{element.name}}
             </mat-cell>
         </ng-container>
-
         <ng-container matColumnDef="email">
-            <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <span class="mobile-label">Email:</span> {{element.email}}
             </mat-cell>
         </ng-container>
-
-        <!-- Weight Column -->
+        <ng-container matColumnDef="tel">
+            <mat-header-cell *matHeaderCellDef>Tel</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Tel:</span> {{element.tel}}
+            </mat-cell>
+        </ng-container>
         <ng-container matColumnDef="person">
             <mat-header-cell *matHeaderCellDef>Personen</mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <span class="mobile-label">Personen:</span> {{element.person}}
             </mat-cell>
         </ng-container>
-
-        <!-- Symbol Column -->
         <ng-container matColumnDef="type">
             <mat-header-cell *matHeaderCellDef>Reservierungsart</mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <span class="mobile-label">Art:</span> {{element.type}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="goodie">
+            <mat-header-cell *matHeaderCellDef>Goodie</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Goodie:</span> {{element.goodie}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="date">
+            <mat-header-cell *matHeaderCellDef>Datum</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Datum:</span> {{element.date}}
+            </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="time">
+            <mat-header-cell *matHeaderCellDef>Uhrzeit</mat-header-cell>
+            <mat-cell *matCellDef="let element">
+                <span class="mobile-label">Uhrzeit:</span> {{element.time}}
             </mat-cell>
         </ng-container>
         <ng-container matColumnDef="state">
@@ -51,12 +63,12 @@
             </mat-cell>
         </ng-container>
         <ng-container matColumnDef="actionsColumn">
-            <mat-header-cell *matHeaderCellDef><button mat-icon-button color="primary"><i class="fa fa-plus mat-icon"></i></button> </mat-header-cell>
+            <mat-header-cell *matHeaderCellDef><a [routerLink]="['/table-add']"><i class="fa fa-plus mat-icon"></i></a></mat-header-cell>
             <mat-cell *matCellDef="let element">
                 <span class="mobile-label action-label"><button mat-icon-button color="primary"><i class="fa fa-plus mat-icon"></i></button></span>
-                <button mat-icon-button color="primary" focusable="false">
+                <a [routerLink]="['/table-edit']">
                     <i class="fa fa-pencil mat-icon"></i>
-                </button>
+                </a>
                 <button mat-icon-button color="warn" focusable="false">
                     <i class="fa fa-times mat-icon"></i>
                 </button>

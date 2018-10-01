@@ -8,7 +8,7 @@ import {MatPaginator, MatSort, MatTableDataSource} from "@angular/material";
 })
 export class ReservationComponent implements OnInit{
 
-    displayedColumns = ['date', 'name', 'email', 'person', 'type', 'state', 'actionsColumn'];
+    displayedColumns = ['name', 'email', 'tel', 'person', 'type', 'goodie', 'date', 'time', 'state', 'actionsColumn'];
     dataSource = new MatTableDataSource<ReservationDetails>(ELEMENT_DATA);
 
     @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -26,21 +26,24 @@ export class ReservationComponent implements OnInit{
 }
 
 export interface ReservationDetails {
-    date: string;
     name: string;
     email: string;
+    tel: string;
     person: string;
     type: string;
+    goodie: string;
+    date: string;
+    time: string;
     state: string;
 }
 
 const ELEMENT_DATA: ReservationDetails[] = [
-    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '4', type: 'Normal', state: 'abgeschlossen'},
-    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '6', type: 'Normal', state: 'storniert'},
-    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '8', type: 'Geburtstag', state: 'abgeschlossen'},
-    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '2', type: 'Normal', state: 'storniert'},
-    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '10', type: 'Geburtstag', state: 'abgeschlossen'},
-    {date: '06.08', name: 'Test Daten', email: 'test@daten.com', person: '3', type: 'Normal', state: 'storniert'}
+    {name: 'Test Daten', email: 'test@daten.com', tel: '069912345678', person: '4', type: 'Normal', goodie: '-', date: '06.08', time: '18:45', state: 'abgeschlossen'},
+    {name: 'Test Daten', email: 'test@daten.com', tel: '069912345678', person: '6', type: 'Normal', goodie: '-', date: '06.08', time: '18:45',  state: 'storniert'},
+    {name: 'Test Daten', email: 'test@daten.com', tel: '069912345678', person: '8', type: 'Geburtstag', goodie: 'Torte', date: '06.08', time: '18:45',  state: 'abgeschlossen'},
+    {name: 'Test Daten', email: 'test@daten.com', tel: '069912345678', person: '2', type: 'Normal', goodie: '-', date: '06.08', time: '18:45',  state: 'storniert'},
+    {name: 'Test Daten', email: 'test@daten.com', tel: '069912345678', person: '10', type: 'Geburtstag', goodie: 'Prosecco', date: '06.08', time: '18:45',  state: 'abgeschlossen'},
+    {name: 'Test Daten', email: 'test@daten.com', tel: '069912345678', person: '3', type: 'Normal', goodie: '-', date: '06.08', time: '18:45',  state: 'storniert'}
 ];
 
 

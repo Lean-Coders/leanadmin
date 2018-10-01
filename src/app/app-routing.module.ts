@@ -7,12 +7,14 @@ import { AuthGuard } from "./auth/login/auth.guard";
 import { DashboardComponent } from "./adminboard/dashboard/dashboard.component";
 import { AdminboardLayoutComponent } from "./layouts/adminboard-layout.component";
 import { LoginLayoutComponent } from "./layouts/login-layout.component";
+import {TableEditComponent} from "./adminboard/reservation/table-edit/table-edit.component";
+import {TableAddComponent} from "./adminboard/reservation/table-add/table-add.component";
 
 const routes: Routes = [
     {
         path: '',
         component: AdminboardLayoutComponent,
-        /*canActivate: [AuthGuard],*/
+        canActivate: [AuthGuard],
         children: [
             {
                 path: 'dashboard',
@@ -21,6 +23,14 @@ const routes: Routes = [
             {
                 path: 'reservation',
                 component: ReservationComponent
+            },
+            {
+                path: 'table-edit',
+                component: TableEditComponent
+            },
+            {
+                path: 'table-add',
+                component: TableAddComponent
             }
         ]
     },
