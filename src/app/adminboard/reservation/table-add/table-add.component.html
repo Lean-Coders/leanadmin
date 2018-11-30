@@ -37,8 +37,9 @@
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Datum</mat-label>
-      <input matInput placeholder="Datum">
-      <mat-icon matSuffix>date_range</mat-icon>
+      <input matInput [matDatepicker]="picker" placeholder="Datum">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker touchUi #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Uhrzeit</mat-label>

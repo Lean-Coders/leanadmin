@@ -22,6 +22,7 @@
 
   mat-icon {
     color: rgba(0, 0, 0, 0.54);
+    margin-right: 7px;
   }
 
   button {
@@ -31,5 +32,9 @@
     @media screen and (max-width: $tablet) {
       width: 90%;
     }
+  }
+
+  .mat-select-arrow {
+    margin: 0 15px 0 0;
   }
 }
